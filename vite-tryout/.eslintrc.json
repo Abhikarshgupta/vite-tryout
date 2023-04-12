@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended" //at last
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["simple-import-sort", "prettier"],
+  "rules": {
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-console": "warn",
+    "react/prop-types": "off",
+    "react/self-closing-comp": "warn",
+    "react/react-in-jsx-scope": "off",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react"],
+          ["^@materialUI"],
+          ["^@mUI"],
+          ["^@?\\w"],
+          ["@/(.*)"],
+          ["^[./]"]
+        ]
+      }
+    ]
+  }
+}
