@@ -4,8 +4,7 @@
     "eslint:recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:prettier/recommended" //at last
+    "plugin:react/jsx-runtime"
   ],
   "env": {
     "browser": true,
@@ -23,8 +22,13 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["simple-import-sort", "prettier"],
+  "plugins": ["simple-import-sort"],
   "rules": {
+    "import/resolver": {
+      "node": {
+        "paths": ["path.resolve(__dirname, 'src')"]
+      }
+    },
     "react/jsx-sort-props": [
       "warn",
       {
@@ -36,7 +40,6 @@
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "no-console": "warn",
     "react/prop-types": "off",
     "react/self-closing-comp": "warn",
     "react/react-in-jsx-scope": "off",
